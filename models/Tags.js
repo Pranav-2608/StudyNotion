@@ -1,18 +1,17 @@
 const mongoose = require("mongoose");
 
 const tagSchema = new mongoose.Schema({
-    user:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"User",
-    },
-    rating:{
-        type:Number,
+    name:{
+        type:String,
         required:true,
     },
-    review:{
+    description:{
         type:String,
-        required:true
-    }
+    },
+    course:[{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Course"
+    }],
 });
 
 
